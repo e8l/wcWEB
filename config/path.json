@@ -1,0 +1,7 @@
+{
+  "polymer_dir": "bower_components/polymer/",
+  "webcomponents_dir": "bower_components/webcomponentsjs/",
+  "chai_dir": "bower_components/chai/",
+  "mocha_dir": "bower_components/mocha/",
+  "test_prefix": "../"
+}

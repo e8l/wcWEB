@@ -1,0 +1,75 @@
+{
+  "command": {
+    "vulcanize": {
+      "command": "vulcanize",
+      "option": ["--inline-css", "--inline-scripts"]
+    },
+    "minimize": {
+      "command": "htmlmin"
+    },
+    "test": {
+      "command" : "wct",
+      "noArgs": true
+    }
+  },
+  "preprocess": {
+    "html": {
+      "minimize": {
+        "type": "command",
+        "command": "htmlmin",
+        "option": ["--nojsmin", "--nocssmin"]
+      }
+    },
+    "js": {
+      "minimize": {
+        "type": "command",
+        "command": "uglifyjs"
+      },
+      "lint": {
+        "type": "command",
+        "command": "jshint",
+        "option": ["-"],
+        "noUpdate": true
+      }
+    },
+    "css": {
+      "minimize": {
+        "type": "command",
+        "command": "cleancss"
+      }
+    }
+  },
+  "compiler": {
+    "scss": {
+      "type": "command",
+      "command": "scss"
+    },
+    "sass": {
+      "type": "command",
+      "command": "sass"
+    },
+    "less": {
+      "type": "command",
+      "command": "less",
+      "option": ["-"]
+    },
+    "haml": {
+      "type": "command",
+      "command": "haml"
+    },
+    "slim": {
+      "type": "command",
+      "command": "slimrb",
+      "option": ["-p"]
+    },
+    "es5": {
+      "type": "command",
+      "command": "babel"
+    },
+    "coffee": {
+      "type": "command",
+      "command": "coffee",
+      "option": ["-p", "-s"]
+    }
+  }
+}

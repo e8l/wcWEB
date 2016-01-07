@@ -1,0 +1,122 @@
+    (function() {
+      // preprocess
+      {{{preprocess}}}
+      
+      Polymer({
+        is: "{{tagName}}",
+        // attributes
+        hostAttributes: {
+{{#attr}}
+          /**
+           * {{{description}}}
+           *
+           * @attribute {{name}}
+           * @default   {{{default}}}
+           * {{#type}}@type      {{.}}{{/type}}
+           */
+          {{name}}: {{{default}}},
+
+{{/attr}}
+        },
+        
+        // published properties
+        properties: {
+        {{#publish}}
+          /**
+           * {{{description}}}
+           * 
+           * @property {{name}}
+           * @type     {{type}}
+           * {{#value}}@default  {{{.}}}{{/value}}
+           */
+          {{name}}: {
+            type: {{type}},
+            {{#value}}value: {{{.}}},{{/value}}
+            {{#notify}}notify: true,{{/notify}}
+            {{#reflect}}reflectToAttribute: true,{{/reflect}}
+            {{#readonly}}readOnly: true,{{/readonly}}
+            {{#observer}}observer: "{{{.}}}",{{/observer}}
+            {{#computed}}computed: "{{{.}}}",{{/computed}}
+          },
+          
+        {{/publish}}
+        },
+        
+        // properties
+        {{#prop}}
+        /**
+         * {{{description}}}
+         * 
+         * @property {{name}}
+         * {{#private}}@private{{/private}}
+         * {{#type}}@type     {{.}}{{/type}}
+         * @default  {{{value}}}
+         */
+        {{name}}: {{{value}}},
+        
+        {{/prop}}
+        
+        {{#life}}
+        //Life cycle methods
+        {{#created}}
+        created() {
+          {{{.}}}
+        },
+        
+        {{/created}}
+        {{#ready}}
+        ready() {
+          {{{.}}}
+        },
+        
+        {{/ready}}
+        {{#factoryImpl}}
+        /**
+         * {{#param}}@param  { {{#optional}}[{{/optional}}{{type}}{{#optional}}]{{/optional}} } {{name}} {{{description}}}
+         * {{/param}}
+         */
+        factoryImpl{{{definition}}},
+        
+        {{/factoryImpl}}
+        {{#attached}}
+        attached() {
+          {{{.}}}
+        },
+        
+        {{/attached}}
+        {{#detached}}
+        detached() {
+          {{{.}}}
+        },
+        
+        {{/detached}}
+        {{#attributeChanged}}
+        attributeChanged(name, type) {
+          {{{.}}}
+        },
+        
+        {{/attributeChanged}}
+        {{/life}}
+        
+        {{#observers}}observers: [{{/observers}}
+          {{#observers}}
+          "{{{.}}}",
+          {{/observers}}
+        {{#observers}}],{{/observers}}
+        
+        // methods
+        {{#methods}}
+        /**
+         * {{{description}}}
+         *
+         * @method {{name}}
+         * {{#private}}@private{{/private}}
+         * {{#param}}@param  { {{#optional}}[{{/optional}}{{type}}{{#optional}}]{{/optional}} } {{name}} {{{description}}}
+         * {{/param}}
+         * {{#return}}@return {{type}} {{{description}}}{{/return}}
+         */
+        {{name}}{{{definition}}},
+        
+        {{/methods}}
+      });
+    })();

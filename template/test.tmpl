@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Test Page for {{{tagName}}}</title>
+    <meta charset="utf8"/>
+    
+    <!-- testing framework -->
+    <link rel="stylesheet" href="{{{test_prefix}}}{{{mocha_dir}}}mocha.css"/>
+    <script src="{{{test_prefix}}}{{{chai_dir}}}chai.js"></script>
+    <script src="{{{test_prefix}}}{{{mocha_dir}}}mocha.js"></script>
+    <script>mocha.setup("bdd");</script>
+    
+    <!-- target web component -->
+    <script src="{{{test_prefix}}}{{{webcomponents_dir}}}webcomponents-lite.min.js"></script>
+    <link rel="import" href="{{{test_prefix}}}{{{tagName}}}.html"/>
+  </head>
+  <body>
+    <!-- component instance -->
+    <{{{tagName}}} id="elm"></{{{tagName}}}>
+    <!-- result -->
+    <div id="mocha"></div>
+    <!-- test -->
+    <script>
+      var assert = chai.assert,
+          expect = chai.expect,
+          should = chai.should;
+      
+      var elm = document.getElementById("elm");
+      
+      describe("{{tagName}}", function(){
+        {{#simpleTests}}describe("Simple Assertion Test", function(){ {{/simpleTests}}
+          {{#simpleTests}}it("{{{name}}}", function() {
+            assert.equal(elm.{{{call}}}, {{{expect}}});
+          });
+
+          {{/simpleTests}}
+        {{#simpleTests}}});{{/simpleTests}}
+        
+        {{#tests}}
+        describe("{{{testName}}}", function(){
+          {{{testCode}}}
+        });
+        
+        {{/tests}}
+      });
+      
+      mocha.checkLeaks();
+      if (window.mochaPhantomJS) {
+        mochaPhantomJS.run();
+      }
+      else {
+        mocha.run();
+      }
+    </script>
+  </body>
+</html>

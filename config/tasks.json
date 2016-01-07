@@ -1,0 +1,53 @@
+{
+  "path": "./tasks",
+  "tasks": [
+             {
+               "name": "links",
+               "script": "links.js"
+             },
+             {
+               "name": "structure",
+               "script": "structure.js"
+             },
+             {
+               "name": "style",
+               "script": "style.js"
+             },
+             {
+               "name": "preprocess",
+               "script": "preprocess.js"
+             },
+             {
+               "name": "properties",
+               "script": "prop.js"
+             },
+             {
+               "name": "methods",
+               "script": "method.js"
+             },
+             {
+               "name": "lifecycle",
+               "script": "lifecycle.js"
+             },
+             {
+               "name": "tests",
+               "script": "test.js"
+             },
+             {
+               "name": "description",
+               "script": "description.js"
+             },
+             {
+               "name": "demo",
+               "script": "demo.js"
+             },
+             {
+               "name": "readme",
+               "script": "readme.js"
+             },
+             {
+               "name": "paths",
+               "script": "paths.js"
+             }
+           ]
+}

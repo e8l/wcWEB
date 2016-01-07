@@ -1,0 +1,16 @@
+<link rel="import" href="{{#paths}}{{{polymer_dir}}}{{/paths}}polymer.html">
+
+{{#links}}<link rel="import" href="{{{.}}}">
+{{/links}}
+ 
+<dom-module name="{{tagName}}">
+  <template>
+{{#style}}    <style>
+      {{.}}
+    </style>{{/style}}
+    {{{structure}}}
+  </template>
+  <script>
+{{{script}}}
+  </script>
+</dom-module>

@@ -1,0 +1,206 @@
+<html>
+  <head>
+    <title>{{title}}</title>
+    <style>
+    body{
+      color: #222;
+      background-color: #777;
+    }
+    
+    table {
+      font-size: 12px;
+      width: 80%;
+      margin: auto auto 10px;
+      border-collapse: collapse;
+    }
+    
+    iframe {
+      border: none;
+      width: 80%;
+      margin: 10px auto;
+    }
+    
+    .col-type {
+      width: 30%;
+    }
+    
+    .col-init {
+      width: 70%;
+    }
+    
+    .col-arg-type {
+      width: 15%;
+    }
+    
+    .col-arg-name {
+      width: 20%;
+      font-weight: bold;
+    }
+    
+    .col-arg-info {
+      width: 65%;
+    }
+    
+    .method-args th, .prop-data th, .attr-data th {
+      background-color: #FAFAFA;
+      text-align: left
+    }
+    
+    table, td, th {
+      border: 1px solid #111;
+    }
+    
+    td, th {
+      padding: 0.5em;
+    }
+    
+    code{
+      background-color: #eee;
+      color: #303;
+      padding: 0.2em;
+    }
+    
+    pre code {
+      padding: 16px;
+    }
+    
+    dt {
+      font-weight: bold;
+      margin-bottom: 0.5em;
+    }
+    
+    dd {
+      margin-bottom: 6px;
+    }
+    
+    article{
+      margin: 10px auto;
+      padding: 10px;
+      width: 960px;
+      background-color: #fff;
+    }
+    
+    /*
+    article:after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+    */
+    
+    section {
+      width: 90%;
+      margin: auto auto;
+    }
+    
+    nav {
+      width: 120px;
+      margin-top: 70px;
+      margin-right: 20px;
+      padding: 10px;
+      float: left;
+      background-color: #F0F0F0;
+      border-top: 1px solid #DBDBDB;
+      border-bottom: 1px solid #DBDBDB;
+      font-size: 12px;
+    }
+    
+    nav h2 {
+      margin: 5px auto;
+      font-size: 16px;
+      font-weight: normal;
+    }
+    
+    nav a, nav a:link {
+      text-decoration: none;
+      color: #999;
+    }
+    
+    nav a:visited {
+      color: #999;
+    }
+    
+    nav a:hover, nav a:active {
+      color: #444;
+      text-decoration: underline;
+    }
+    
+    nav ul {
+      padding-left: 10px;
+    }
+    
+    nav li {
+      list-style: none;
+    }
+    
+    .main {
+      width: 800px;
+      float: left;
+    }
+    
+    .main > h1, .main > h2 {
+      font-weight: normal;
+    }
+    
+    .main > h1 {
+      font-size: 36px;
+      margin: 10px 5px;
+    }
+    
+    .main > h2 {
+      font-size: 20px;
+      padding: 10px;
+      background-color: #E8E8E8;
+    }
+    
+    .main > h3 {
+      font-size: 16px;
+      margin: 8px auto;
+    }
+    
+    .badge {
+      color: #fff;
+      font-size: 10px;
+      margin: auto 5px;
+      padding: 1px 5px;
+      height: 14px;
+      line-height: 14px;
+      border-radius: 4px;
+      border: 1px solid #000;
+    }
+    
+    .chainable {
+      background-color: #1C14B8;
+    }
+    .async {
+      background-color: #AB1F15;
+    }
+    .depricated {
+      background-color: #3D473B;
+    }
+    .prop-feature {
+      background-color: #14B822;
+    }
+    
+    footer {
+      clear: both;
+      font-size: 10px;
+      text-align: right;
+      border-top: 1px solid #888;
+      color: #999;
+    }
+    
+    </style>
+  </head>
+  <body>
+    <article>
+      <nav>
+        {{{toc}}}
+      </nav>
+      <div class="main">
+        $body$
+      </div>
+      <footer>Generated on {{time}}</footer>
+    </article>
+  </body>
+</html>

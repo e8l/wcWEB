@@ -1,0 +1,79 @@
+---
+authors: {{^authors}}""{{/authors}}
+{{#authors}}  - {{{.}}}
+{{/authors}}
+version: {{{version}}}
+keywords: {{^keywords}}""{{/keywords}}
+{{#keywords}}  - {{{.}}}
+{{/keywords}}
+homepage: {{{homepage}}}
+license: {{{license}}}
+summary: {{{description}}}
+---
+
+{{name}}
+========================================
+
+Description
+----------------------------------------
+{{description}}
+
+Structure
+----------------------------------------
+Write your web component's shadow dom structure.
+
+```html
+  <!-- Enter Your Code -->
+```
+
+Style
+----------------------------------------
+Write your web component's shadow dom style.
+
+```css
+/* Enter Your Code */
+```
+
+Attributes
+----------------------------------------
+attr-name
+:    Type
+:    `initial value`
+
+explanation for the attributes.
+
+Properties
+----------------------------------------
+prop-name
+:    Type
+:    `initial value`
+
+explanation for the property.
+
+Methods
+----------------------------------------
+method-name
+:    param {Type} ArgName explanation for the argument.
+:    return {Type} explanation for the return value.
+
+explanation for the method
+```js
+// implimentation of the method
+// code you'll write is ...
+// 
+//    function(...) {
+// =>   **this part only!**
+//    }
+```
+
+Test
+----------------------------------------
+
+### Sample-Test
+write description and code for tests.
+
+```js
+it("Always Pass", function(){
+  assert.ok('everything', 'everything is ok');
+});
+```

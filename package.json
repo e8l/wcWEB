@@ -1,0 +1,24 @@
+{
+  "name": "wcWEB",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bin/index.js",
+  "bin": {
+    "wcWEB": "bin/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yuta Ebisawa",
+  "license": "ISC",
+  "dependencies": {
+    "argparse": "^1.0.3",
+    "co": "^4.6.0",
+    "mustache": "^2.2.1",
+    "yaml-front-matter": "^3.2.3"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-es2015-classes": "^6.4.0",
+    "babel-plugin-transform-es2015-parameters": "^6.4.2"
+  }
+}

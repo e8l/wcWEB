@@ -1,0 +1,69 @@
+{{{preprocess}}}
+
+Polymer
+  is: "{{tagName}}"
+  
+  {{#properties}}
+  properties:
+  {{#publish}}
+    {{name}}: 
+      type: {{type}}
+      {{#value}}value: {{{.}}}{{/value}}
+      {{#notify}}notify: true{{/notify}}
+      {{#reflect}}reflectToAttribute: true{{/reflect}}
+      {{#readonly}}readOnly: true{{/readonly}}
+      {{#observer}}observer: "{{{.}}}"{{/observer}}
+      {{#computed}}computed: "{{{.}}}"{{/computed}}
+      
+  {{/publish}}
+
+  {{#private}}
+  {{name}}: {{{value}}}
+  
+  {{/private}}
+  {{/properties}}
+  
+  {{#lifecycle}}
+  {{#created}}
+  created: () ->
+     {{{.}}}
+  
+  {{/created}}
+  {{#ready}}
+  ready: () ->
+    {{{.}}}
+  
+  {{/ready}}
+  {{#factoryImpl}}
+  factoryImpl: {{{definition}}}
+  
+  {{/factoryImpl}}
+  {{#attached}}
+  attached: () ->
+    {{{.}}}
+  
+  {{/attached}}
+  {{#detached}}
+  detached: () ->
+    {{{.}}}
+  
+  
+  {{/detached}}
+  {{#attributeChanged}}
+  attributeChanged: (name, type) ->
+    {{{.}}}
+  
+  
+  {{/attributeChanged}}
+  {{/lifecycle}}
+
+  {{#observers}}observers: [{{/observers}}
+    {{#observers}}
+    "{{{.}}}",
+    {{/observers}}
+  {{#observers}}],{{/observers}}
+
+  {{#methods}}
+  {{name}}: {{{definition}}}
+  
+  {{/methods}}

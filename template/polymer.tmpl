@@ -1,0 +1,76 @@
+    (function() {
+      {{{preprocess}}}
+      
+      Polymer({
+        is: "{{tagName}}",
+        
+{{#properties}}
+        properties: {
+{{#publish}}
+          {{name}}: {
+            type: {{type}},
+{{#value}}            value: {{{.}}},{{/value}}
+{{#notify}}            notify: true,{{/notify}}
+{{#reflect}}            reflectToAttribute: true,{{/reflect}}
+{{#readonly}}            readOnly: true,{{/readonly}}
+{{#observer}}            observer: "{{{.}}}",{{/observer}}
+{{#computed}}            computed: "{{{.}}}"{{/computed}}
+          },
+          
+{{/publish}}
+        },
+        
+{{#private}}
+        {{name}}: {{{value}}},
+        
+{{/private}}
+{{/properties}}
+        
+{{#lifecycle}}
+{{#created}}
+        created: function() {
+                   {{{.}}}
+                 },
+        
+{{/created}}
+{{#ready}}
+        ready: function() {
+                 {{{.}}}
+               },
+        
+{{/ready}}
+{{#factoryImpl}}
+        factoryImpl: {{{definition}}},
+        
+{{/factoryImpl}}
+{{#attached}}
+        attached: function() {
+                    {{{.}}}
+                  },
+        
+{{/attached}}
+{{#detached}}
+        detached: function() {
+                    {{{.}}}
+                  },
+        
+{{/detached}}
+{{#attributeChanged}}
+        attributeChanged: function(name, type) {
+                            {{{.}}}
+                          },
+        
+{{/attributeChanged}}
+{{/lifecycle}}
+        
+{{#observers}}        observers: [{{/observers}}
+{{#observers}}          "{{.}}",{{/observers}}
+{{#observers}}        ],{{/observers}}
+{{#observers}}        
+{{/observers}}
+{{#methods}}
+        {{name}}: {{{definition}}},
+        
+{{/methods}}
+      });
+    })();

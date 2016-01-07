@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Demo - {{tag}}</title>
+    <script src="{{{webcomponents_dir}}}webcomponents-lite.min.js"></script>
+    <link rel="import" href="./{{tag}}.html">
+    <style>
+    body{
+      color: #222;
+    }
+    
+    table {
+      font-size: 12px;
+      width: 80%;
+      margin: auto auto 10px;
+      border-collapse: collapse;
+    }
+    
+    table, td, th {
+      border: 1px solid #111;
+    }
+    
+    td, th {
+      padding: 0.5em;
+    }
+    
+    code{
+      background-color: #eee;
+      color: #303;
+      padding: 0.2em;
+    }
+    
+    pre code {
+      padding: 16px;
+    }
+    
+    dt {
+      font-weight: bold;
+      margin-bottom: 0.5em;
+    }
+    
+    dd {
+      margin-bottom: 6px;
+    }
+    
+    h1, h2 {
+      font-weight: normal;
+    }
+    
+    h1 {
+      font-size: 36px;
+      margin: 10px 5px;
+    }
+    
+    h2 {
+      font-size: 20px;
+      padding: 10px;
+      background-color: #E8E8E8;
+    }
+    
+    h3 {
+      font-size: 16px;
+      margin: 8px auto;
+    }
+    </style>
+  </head>
+  <body>
+    {{#demos}}
+    {{{explain}}}
+    <pre><code>{{code}}</code></pre>
+    
+    {{{code}}}
+    
+    {{/demos}}
+  </body>
+</html>
