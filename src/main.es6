@@ -101,7 +101,7 @@ module.exports = function(argv) {
   
   //demo code
   if(info.demo.length > 0) {
-    let demoCode = mustache.render(templates("demo"), info);
+    let demoCode = mustache.render(templates.get("demo"), info);
     fs.writeFileSync(path.join(metadata.outdir, "demo.html"), demoCode, "utf8");
   }
   
