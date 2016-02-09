@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Demo - {{tag}}</title>
-    <script src="{{{webcomponents_dir}}}webcomponents-lite.min.js"></script>
-    <link rel="import" href="./{{tag}}.html">
+    <title>Demo - {{tagName}}</title>
+    <script src="{{#paths}}{{{webcomponents_dir}}}{{/paths}}webcomponents-lite.min.js"></script>
+    <link rel="import" href="./{{tagName}}.html">
     <style>
     body{
       color: #222;
@@ -65,12 +65,12 @@
     </style>
   </head>
   <body>
-    {{#demos}}
+    {{#demo}}
     {{{explain}}}
     <pre><code>{{code}}</code></pre>
     
     {{{code}}}
     
-    {{/demos}}
+    {{/demo}}
   </body>
 </html>

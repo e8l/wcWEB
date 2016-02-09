@@ -29,7 +29,7 @@ class Demo extends BaseTask {
           tmpRoot.removeAllChildren();
         }
         
-        let code      = elm;
+        let code      = elm.content;
         let codeType  = code.codeType;
 
         if (codeType && tools.compilable(codeType)) {
