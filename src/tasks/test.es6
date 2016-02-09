@@ -2,6 +2,8 @@
 
 const BaseTask = require("../BaseTask.js");
 
+const baseIndent = 10;
+
 class Test extends BaseTask {
   constructor(selector, metadata){
     super(selector, metadata);
@@ -32,7 +34,7 @@ class Test extends BaseTask {
       for (let frag of testCodes) {
         code += `${frag.content}\n`;
       }
-      code = code.split("\n").join("\n        ");
+      code = code.split("\n").join("\n" + " ".repeat(baseIndent));
       
       testData.testCode = code;
       this.testList.push(testData);

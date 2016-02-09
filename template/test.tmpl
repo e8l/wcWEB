@@ -5,14 +5,14 @@
     <meta charset="utf8"/>
     
     <!-- testing framework -->
-    <link rel="stylesheet" href="{{{test_prefix}}}{{{mocha_dir}}}mocha.css"/>
-    <script src="{{{test_prefix}}}{{{chai_dir}}}chai.js"></script>
-    <script src="{{{test_prefix}}}{{{mocha_dir}}}mocha.js"></script>
+    <link rel="stylesheet" href="{{#paths}}{{{test_prefix}}}{{{mocha_dir}}}{{/paths}}mocha.css"/>
+    <script src="{{#paths}}{{{test_prefix}}}{{{chai_dir}}}{{/paths}}chai.js"></script>
+    <script src="{{#paths}}{{{test_prefix}}}{{{mocha_dir}}}{{/paths}}mocha.js"></script>
     <script>mocha.setup("bdd");</script>
     
     <!-- target web component -->
-    <script src="{{{test_prefix}}}{{{webcomponents_dir}}}webcomponents-lite.min.js"></script>
-    <link rel="import" href="{{{test_prefix}}}{{{tagName}}}.html"/>
+    <script src="{{#paths}}{{{test_prefix}}}{{{webcomponents_dir}}}{{/paths}}webcomponents-lite.min.js"></script>
+    <link rel="import" href="{{#paths}}{{{test_prefix}}}{{/paths}}{{{tagName}}}.html"/>
   </head>
   <body>
     <!-- component instance -->
@@ -29,7 +29,7 @@
       
       describe("{{tagName}}", function(){
         {{#simpleTests}}describe("Simple Assertion Test", function(){ {{/simpleTests}}
-          {{#simpleTests}}it("{{{name}}}", function() {
+{{#simpleTests}}          it("{{{name}}}", function() {
             assert.equal(elm.{{{call}}}, {{{expect}}});
           });
 
